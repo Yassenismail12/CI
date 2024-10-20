@@ -471,7 +471,7 @@ td:last-child {
 }
 
 .pace .pace-progress {
-  background: #f9a828;
+  background: #80b539;
   position: fixed;
   z-index: 900;
   top: 0;
@@ -510,7 +510,7 @@ td:last-child {
   margin-left: -30px;
   margin-top: -30px;
   padding: 0;
-  background-color: #f9a828;
+  background-color: #80b539;
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
   animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -1898,7 +1898,75 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   margin-top: 6rem;
 }
 #our-measures {
+  position: relative;
+  background-image: url('../images/shutterbug.jpg'); /* Add your background image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 0;
+  z-index: 1;
+}
+#our-measures::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 126, 172, 0.568); /* Overlay color with transparency */
+  z-index: -1; /* Place behind the content */
+}
+.about-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  padding: 2rem 0; /* Add padding around the section */
+  position: relative;
+  z-index: 2; /* Ensure content is on top of the overlay */
+}
+/* Left column: Image */
+.left-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start; /* Align image to the left */
+}
 
+.left-image .about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: rounded corners */
+}
+/* Right column: Content */
+.right-content {
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.right-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.right-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-wrap {
+    flex-direction: column; /* Stack columns on small screens */
+    text-align: center;
+  }
+
+  .left-image, .right-content {
+    padding: 0;
+  }
+
+  .left-image {
+    margin-bottom: 2rem; /* Add margin to the bottom of the image */
+  }
 }
 #our-measures .lead{
   font-family: "montserrat-bold", serif;
