@@ -63,7 +63,7 @@ html, body {
 }
 
 body {
-  background: #111111;
+  background: #007dab;
   font-family: "montserrat-bold", serif;
   font-size: 1.6rem;
   line-height: 3rem;
@@ -1873,102 +1873,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   letter-spacing: .3rem;
   position: relative;
 }
-#our-measures h3 {
-  font-family: "montserrat-bold", sans-serif;
-  font-size: 1.8rem;
-  line-height: 1.667;
-  color: #83b738;
-  text-transform: uppercase;
-  letter-spacing: .3rem;
-  position: relative;
-}
-#about h3::before {
-  display: block;
-  content: "";
-  width: 3px;
-  height: 9.6rem;
-  background-color: rgba(131, 183, 56, 0.7);
-  margin: 0 5.7rem;
-}
 #about .lead {
-  font-family: "montserrat-bold", serif;
-  font-size: 4rem;
-  line-height: 1.8;
-  color: #2e383f;
-  margin-top: 6rem;
-}
-#our-measures {
-  position: relative;
-  background-image: url('../images/shutterbug.jpg'); /* Add your background image URL */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 4rem 0;
-  z-index: 1;
-}
-#our-measures::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 126, 172, 0.568); /* Overlay color with transparency */
-  z-index: -1; /* Place behind the content */
-}
-.about-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Ensures responsiveness */
-  padding: 2rem 0; /* Add padding around the section */
-  position: relative;
-  z-index: 2; /* Ensure content is on top of the overlay */
-}
-/* Left column: Image */
-.left-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start; /* Align image to the left */
-}
-
-.left-image .about-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px; /* Optional: rounded corners */
-}
-/* Right column: Content */
-.right-content {
-  flex: 1;
-  padding-left: 2rem;
-}
-
-.right-content h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.right-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-wrap {
-    flex-direction: column; /* Stack columns on small screens */
-    text-align: center;
-  }
-
-  .left-image, .right-content {
-    padding: 0;
-  }
-
-  .left-image {
-    margin-bottom: 2rem; /* Add margin to the bottom of the image */
-  }
-}
-#our-measures .lead{
   font-family: "montserrat-bold", serif;
   font-size: 4rem;
   line-height: 1.8;
@@ -2021,6 +1926,264 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 .info-button:hover:before {
   width: 100%;
+}
+#split-section {
+  display: flex;
+  height: 100vh; /* This makes the section fill the entire viewport height */
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.split {
+  flex: 1; /* Makes both divs take up equal space */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the content in the middle of each div */
+}
+
+.left-side {
+  flex: 1.46; /* Adjusting flex values for better spacing */
+  background-color: #007dab; /* Background color for the left side */
+  color: white; /* Text color */
+  position: relative; /* To position image or video */
+}
+#lslb {
+  flex: 2
+}
+#labanapic {
+  align-self: self-end;
+}
+.right-side {
+  flex: 2; /* Right side flex */
+  background-color: #f0f0f0; /* Background color for the right side */
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center content in the right side */
+  align-items: center; /* Center content in the right side */
+  flex-direction: column; /* Stack content vertically */
+}
+
+.right-side .content {
+  text-align: center; /* Center the text in the right-side content */
+  padding: 1rem; /* Add padding */
+}
+
+.right-side h3 {
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.667;
+  color: #007fac;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+.right-side p {
+  font-family: "montserrat-bold", sans-serif;
+  line-height: 1.667;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 50px; /* Adjusted font size for better responsiveness */
+  display: flex;
+  justify-content: center; /* Center the paragraph text */
+}
+
+.left-side .image, .right-side .image {
+  max-width: 100%;
+  height: 607px; /* Keep image responsive */
+}
+
+.left-side video, .right-side video {
+  width: 100%;
+  height: auto; /* Change height to auto for responsiveness */
+  object-fit: cover; /* Ensures the video fills the container */
+}
+
+/* Make sure the section is responsive */
+@media (max-width: 1024px) {
+  #split-section {
+      flex-direction: column; /* Stacks the divs vertically on smaller screens */
+      height: auto; /* Allow height to adjust */
+  }
+
+  .split {
+      height: auto; /* Adjust height for smaller screens */
+      flex-direction: column; /* Stack content vertically */
+  }
+
+  .left-side, .right-side {
+      height: 50vh; /* Adjust height for smaller screens */
+  }
+
+  .right-side h3 {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .right-side p {
+      font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .right-side h3 {
+      font-size: 1.2rem; /* Further adjust font size for very small screens */
+  }
+
+  .right-side p {
+      font-size: 1rem; /* Further adjust font size for very small screens */
+  }
+
+  .left-side {
+      padding: 1rem; /* Reduce padding on smaller devices */
+  }
+
+  .right-side {
+      padding: 1rem; /* Reduce padding on smaller devices */
+  }
+}
+#hover-icon {
+  transition: transform 0.3s ease; /* Add smooth transition to icon */
+  color: #007FAC;
+}
+
+#hover-icon:hover {
+  transform: scale(1.4); /* Scale up the icon on hover */
+}
+
+#quality-paragraph {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition effect */
+}
+#main-paragraph {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition effect */
+}
+#mntc-paragraph {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition effect */
+}
+#lab-paragraph {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition effect */
+  color:#007FAC;
+  font-size: 30px;
+}
+#labsr {
+color: #83B738;
+}
+.hide-paragraph {
+  opacity: 0;
+  transform: translateY(-20px); /* Move paragraph slightly up */
+}
+
+.show-paragraph {
+  opacity: 1;
+  transform: translateY(0); /* Bring paragraph back to normal position */
+}
+/* Reverse Section Specific Styling */
+#split-section-reverse {
+  display: flex;
+  height: 100vh; /* Same as the original section */
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+#split-section-reverse .split {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#split-section-reverse .right-side {
+  flex: 1.46; /* Adjust the flex values as needed */
+  background-color: #f0f0f0;
+  color: #80b539;
+  position: relative;
+}
+
+#split-section-reverse .left-side {
+  flex: 2;
+  background-color: #f0f0f0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#split-section-reverse .right-side .content {
+  text-align: center;
+  padding: 1rem;
+}
+
+#split-section-reverse h3 {
+  font-family: "montserrat-bold", sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.667;
+  color: #007dab;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+#split-section-reverse p {
+  font-family: "montserrat-bold", sans-serif;
+  line-height: 1.667;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  #split-section-reverse {
+    flex-direction: column; /* Stack the divs vertically for small screens */
+    height: auto;
+  }
+
+  #split-section-reverse .split {
+    height: auto;
+    flex-direction: column;
+  }
+
+  #split-section-reverse .left-side, #split-section-reverse .right-side {
+    height: 50vh;
+  }
+
+  #split-section-reverse h3 {
+    font-size: 1.5rem;
+  }
+
+  #split-section-reverse p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #split-section-reverse h3 {
+    font-size: 1.2rem;
+  }
+
+  #split-section-reverse p {
+    font-size: 1rem;
+  }
+
+  #split-section-reverse .left-side,
+  #split-section-reverse .right-side {
+    padding: 1rem;
+  }
+}
+#reverse-hover-icon {
+  transition: transform 0.3s ease; /* Add smooth transition to icon */
+  color: #007dab;
+}
+
+#reverse-hover-icon:hover {
+  transform: scale(1.4); /* Scale up the icon on hover */
+}
+#lab-hover-icon {
+  transition: transform 0.3s ease; /* Add smooth transition to icon */
+  color:#83B738;
+}
+
+#lab-hover-icon:hover {
+  transform: scale(1.4); /* Scale up the icon on hover */
 }
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -2249,7 +2412,16 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *  12. services - (_layout.scss)
  *
  * ------------------------------------------------------------------- */
-#services {
+
+#mntc-srv{
+  height: 118px;
+  width: 110px;
+}
+#lab-srv{
+  height: 118px;
+  width: 110px;
+}
+ #services {
   background-color: #19191b;
   background-image: url(../images/services-bg.jpg);
   background-repeat: no-repeat;
@@ -2849,7 +3021,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #clients .owl-carousel .owl-dots .owl-dot {
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  
 }
 #clients .owl-carousel .owl-dots .owl-dot span {
   width: 9px;
@@ -2866,7 +3038,15 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   background-color: #000000;
 }
 
-
+.intro h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 1.667;
+  letter-spacing: .3rem;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  color: #007FAC;
+}
 /* ===================================================================
  *  16. contact - (_layout.scss)
  *
@@ -3233,7 +3413,7 @@ footer h4.h05::after {
 }
 .footer-main #mc-form button {
   background-color: #f9a828;
-  color: #000000;
+  color: #007dab;
   width: 6rem;
   height: 6rem;
   line-height: 6rem;
@@ -3265,6 +3445,7 @@ footer h4.h05::after {
   text-align: center;
   font-family: "montserrat-regular", sans-serif;
   font-size: 1.4rem;
+  background-color: #007dab;
 }
 .footer-bottom .copyright span {
   display: inline-block;
