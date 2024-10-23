@@ -1,0 +1,170 @@
+
+/* Basic reset for responsive scaling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 70%; /* Use percentage for better scaling */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Buttons */
+button, .button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+button:hover, .button:hover {
+    background-color: #007fac;
+}
+
+/* Responsive adjustments for sections */
+#split-section, #split-section-reverse {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left-side, .right-side {
+    flex: 1 1 50%;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .left-side, .right-side {
+        flex: 1 1 100%;
+        padding: 1rem;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.video-text-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-text-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.home-content {
+    z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    .home-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.home-social-list {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #007fac;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 1rem 0;
+    }
+}
+
+/* Mobile Navigation */
+#header-menu-trigger {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #header-menu-trigger {
+        display: block;
+    }
+
+    #menu-nav-wrap {
+        display: none;
+    }
+
+    #header-menu-trigger.menu-open + #menu-nav-wrap {
+        display: block;
+    }
+}
+
+/* Ensuring media queries for responsiveness */
+@media only screen and (max-width: 1024px) {
+    #split-section, #split-section-reverse {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header, footer {
+        padding: 1rem;
+    }
+
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #home {
+        min-height: 702px;
+    }
+
+    .home-content {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+
+    .home-social-list {
+        font-size: 2.1rem;
+    }
+}

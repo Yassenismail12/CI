@@ -65,10 +65,10 @@
 
 			<ul class="header-social-list">
 	         <li>
-	         	<a href="#"><i class="fa fa-facebook-square"></i></a>
+	         	<a href="https://www.facebook.com/CHEMITECLABANA?mibextid=LQQJ4d"><i class="fa fa-facebook-square"></i></a>
 	         </li>
 	         <li>
-	         	<a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+	         	<a href="mailto:info@chemitecgroup.net?subject=Inquiry&body=Hello,%20I%20would%20like%20more%20information."><i class="fa fa-envelope" aria-hidden="true"></i></a>
 	         </li>
 	      </ul>		
 
@@ -81,7 +81,7 @@
    ================================================== -->
    <section id="home">
     <div class="video-text-container">
-        <video autoplay muted loop>
+        <video autoplay muted loop playsinline>
             <source src="Videos/Vid-main.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -106,10 +106,10 @@
 
     <ul class="home-social-list">
         <li class="animate-intro">
-            <a href="#"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://www.facebook.com/CHEMITECLABANA?mibextid=LQQJ4d"><i class="fa fa-facebook-square"></i></a>
         </li>
         <li class="animate-intro">
-            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+            <a href="mailto:info@chemitecgroup.net?subject=Inquiry&body=Hello,%20I%20would%20like%20more%20information."><i class="fa fa-envelope" aria-hidden="true"></i></a>
     </ul>
 
     <div class="scrolldown">
@@ -142,8 +142,8 @@
     </div> <!-- end about-wrap -->
 </section> <!-- end about -->
 <section id="split-section">
-    <div class="split left-side">
-        <img src="images/QC.png" alt="Quality and Safety" class="image">
+    <div id="QC" class="split left-side">
+        <img src="images/QC.png" srcset="images/QC768w.png 768w" alt="Quality and Safety" class="image">
     </div>
     <div class="split right-side">
         <div class="content">
@@ -202,7 +202,7 @@
 
 <section id="split-section">
     <div id="lslb" class="split left-side">
-        <img src="images/LB.png" alt="Laboratory" class="image">
+        <img src="images/LB.png" srcset="images/Lab768w.png 768w" alt="Laboratory" class="image">
     </div>
     <div class="split right-side">
         <div class="content">
@@ -216,10 +216,10 @@
 
 <section id="split-section-reverse">
     <div class="split right-side">
-        <div class="content">
-            <h3 class="animate-this">OUR SERVICES</h3>
+        <div id="maidhd" class="content">
+            <h3  class="animate-this">OUR SERVICES</h3>
 			<img id="maid-srv" src="images/Maid concept.png">
-            <p id="maid-paragraph">Maximize Performance Minimize Downtime!</p>
+            <p id="maid-paragraph">Wrap It Right! & Elevate Your Brand </p>
             <i id="maid-hover-icon" class="fa fa-info-circle" style="font-size: 50px; cursor: pointer;" aria-hidden="true"></i>
         </div>
     </div>
@@ -230,7 +230,8 @@
 
 <section id="split-section">
     <div id="lbna" class="split left-side">
-        <img id="labanapic" src="images/labana.png" alt="Labana" class="image">
+        <img id="labanapic" src="images/labana.png" alt="Labana" class="image desktop-only">
+        <img id="labanapic" src="images/labanaM798.png" alt="Labana" class="image mobile-only">
     </div>
     <div class="split right-side">
         <div class="content">
@@ -336,7 +337,7 @@
             paragraph.classList.add('hide-paragraph');
             
             setTimeout(function() {
-                paragraph.textContent = "Expert lab analysis and services for precise, reliable results.";
+                paragraph.textContent = "Innovative Packaging that Speaks Volumes!";
                 paragraph.classList.remove('hide-paragraph');
                 paragraph.classList.add('show-paragraph');
             }, 500);
@@ -349,7 +350,7 @@
             paragraph.classList.add('hide-paragraph');
             
             setTimeout(function() {
-                paragraph.textContent = "Precision Lab Services, Trusted Results!";
+                paragraph.textContent = "Wrap It Right! & Elevate Your Brand";
                 paragraph.classList.remove('hide-paragraph');
                 paragraph.classList.add('show-paragraph');
             }, 500);

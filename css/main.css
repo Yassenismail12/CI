@@ -1867,10 +1867,9 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
  *
  * ------------------------------------------------------------------- */
 #about {
-  position: relative;
-  padding: 4.2rem 0 12rem;
-  background-color: #FFFFFF;
-  min-height: 696px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 #about span {
   color: #007fac;
@@ -1890,6 +1889,35 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   line-height: 1.8;
   color: #2e383f;
   margin-top: 6rem;
+}
+#about .left-content, #about .right-image {
+  padding: 1rem;
+}
+@media (max-width: 768px) {
+  /* On mobile devices, make the text and image side by side */
+  #about .about-wrap {
+      display: flex;
+      flex-direction: row; /* Align text and image side by side */
+      align-items: center; /* Align content vertically */
+  }
+
+  #about .left-content, #about .right-image {
+      flex: 1; /* Each takes up 50% of the width */
+  }
+
+  /* Adjust the image size for mobile view */
+  #about .right-image img {
+      max-width: 100%; /* Ensure the image doesn't overflow */
+  }
+
+  /* Optionally adjust text font sizes for mobile */
+  #about h3 {
+      font-size: 1.5rem;
+  }
+
+  #about p {
+      font-size: 1rem;
+  }
 }
 .info-button {
   display: inline-block;
@@ -1941,7 +1969,6 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 #split-section {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   background-color: #f0f0f0;
 }
@@ -1955,7 +1982,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 
 .left-side {
   flex: 1.46; /* Adjusting the flex ratio for better spacing on desktop */
-  background-color: #007dab; /* Background color */
+  background-color: #f0f0f0; /* Background color */
   color: white;
   position: relative;
   display: flex;
@@ -1976,7 +2003,6 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
 }
 
 .right-side .content {
@@ -2004,7 +2030,7 @@ html[data-useragent*='MSIE 10.0'] .scrolldown,
 }
 
 .left-side .image, .right-side .image {
-  max-width: 100%;
+  width: -webkit-fill-available;
   height: 607px; /* Keep image responsive */
 }
 
@@ -2020,27 +2046,17 @@ img, video {
 }
 /* Make sure the section is responsive */
 @media (max-width: 1024px) {
-  #split-section {
-      flex-direction: column; /* Stacks content vertically */
-  }
-
-  .split {
-      flex: 1 1 100%; /* Both sides take full width */
-      padding: 1rem; /* Reduce padding for smaller screens */
-      height: auto;
-  }
-
   .left-side, .right-side {
-      height: auto;
-  }
+    padding: 1rem;
+}
 
-  .right-side h3 {
-      font-size: 1.5rem; /* Adjust font size for tablets */
-  }
+.right-side h3 {
+  font-size: 3.2rem; /* Adjust font size for smaller screens */
+}
 
-  .right-side p {
-      font-size: 1.2rem;
-  }
+.right-side p {
+  font-size: 4rem;
+}
 }
 
 
@@ -2072,7 +2088,7 @@ img, video {
 }
 
 #hover-icon:hover {
-  transform: scale(1.5); /* Scale up the icon on hover */
+  transform: scale(2); /* Scale up the icon on hover */
 }
 
 #quality-paragraph {
@@ -2111,10 +2127,9 @@ color: #83B738;
 #split-section-reverse {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
   background-color: #f0f0f0;
-  height: 100vh;
+
 }
 
 #split-section-reverse .split {
@@ -2123,29 +2138,22 @@ color: #83B738;
   justify-content: center;
   align-items: center;
 }
-
 #split-section-reverse .right-side {
-  flex: 1.46; /* Adjust the flex values as needed */
   background-color: #f0f0f0;
   color: #80b539;
-  position: relative;
 }
 
 #split-section-reverse .left-side {
-  flex: 2;
   background-color: #f0f0f0;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 #split-section-reverse .right-side .content {
   text-align: center;
   padding: 1rem;
 }
-
+#maidhd h3{
+  color: #8a2222; 
+}
 #split-section-reverse h3 {
   font-family: "montserrat-bold", sans-serif;
   font-size: 1.8rem;
@@ -2165,34 +2173,93 @@ color: #83B738;
   justify-content: center;
 }
 
-@media (max-width: 1024px) {
-  #split-section-reverse {
-    flex-direction: column; /* Stack vertically on smaller screens */
-    height: auto;
-  }
 
-  .split {
-    flex: 1 1 100%;
-    padding: 1rem;
-  }
-
-  .right-side h3, .left-side h3 {
-    font-size: 1.5rem;
-  }
-
-  .right-side p, .left-side p {
-    font-size: 1.2rem;
-  }
-}
 
 
 @media (max-width: 768px) {
-  .right-side h3, .left-side h3 {
-    font-size: 1.2rem;
+  /* On mobile devices, make the image and text side by side */
+  #split-section {
+      display: flex;
+      flex-direction: row; /* Align content in a row on mobile */
+      align-items: center;
   }
 
-  .right-side p, .left-side p {
-    font-size: 1rem;
+  #split-section .left-side, #split-section .right-side {
+      flex: 1; /* Each side takes up 50% of the width */
+      padding: 0.5rem;
+  }
+
+  /* Ensure the image is responsive on mobile */
+  #split-section .left-side img {
+      max-width: 100%;
+  }
+
+  /* Adjust text size for mobile */
+  #split-section h3 {
+      font-size: 1.5rem;
+  }
+
+  #split-section p {
+      font-size: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  /* On mobile devices, make the image and text side by side */
+  #split-section-reverse {
+      display: flex;
+      flex-direction: row; /* Align content in a row on mobile */
+      align-items: center;
+  }
+
+  #split-section-reverse .left-side, #split-section-reverse .right-side {
+      flex: 1; /* Each side takes up 50% of the width */
+      padding: 0.5rem;
+  }
+
+  /* Ensure the image is responsive on mobile */
+  #split-section-reverse .left-side img {
+      max-width: 100%;
+  }
+
+  /* Adjust text size for mobile */
+  #split-section-reverse h3 {
+      font-size: 1.5rem;
+  }
+
+  #split-section-reverse p {
+      font-size: 2rem;
+  }
+}
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+@media (max-width: 768px) {
+  .desktop-only {
+      display: none;
+  }
+  .mobile-only {
+      display: block;
+      max-width: 100%;
+      height: auto;
+  }
+}
+@media (max-width: 1024px) {
+  /* On mobile devices, make the image and text side by side */
+  /* Ensure the image is responsive on mobile */
+  #split-section-reverse .left-side img {
+      max-width: 100%;
+  }
+
+  /* Adjust text size for mobile */
+  #split-section-reverse h3 {
+      font-size: 1.5rem;
+  }
+
+  #split-section-reverse p {
+      font-size: 2rem;
   }
 }
 #reverse-hover-icon {
@@ -2201,14 +2268,15 @@ color: #83B738;
 }
 
 #reverse-hover-icon:hover {
-  transform: scale(1.4); /* Scale up the icon on hover */
+  transform: scale(2); /* Scale up the icon on hover */
 }
 #maid-hover-icon {
   transition: transform 0.3s ease; /* Add smooth transition to icon */
-  color:#e65153;
+  color: #8a2222;
 }
+
 #maid-hover-icon:hover {
-  transform: scale(1.4); /* Scale up the icon on hover */
+  transform: scale(2); /* Scale up the icon on hover */
 }
 #lab-hover-icon {
   transition: transform 0.3s ease; /* Add smooth transition to icon */
@@ -2216,7 +2284,7 @@ color: #83B738;
 }
 
 #lab-hover-icon:hover {
-  transform: scale(1.4); /* Scale up the icon on hover */
+  transform: scale(2); /* Scale up the icon on hover */
 }
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -2246,7 +2314,7 @@ color: #83B738;
     max-width: 600px;
   }
   #about .lead {
-    font-size: 3.1rem;
+    font-size: 2.1rem;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2258,7 +2326,7 @@ color: #83B738;
   }
   #about .lead {
     margin-top: 4.8rem;
-    font-size: 2.8rem;
+    font-size: 1.7rem;
   }
 }
 @media only screen and (max-width: 500px) {
@@ -2266,7 +2334,7 @@ color: #83B738;
     font-size: 1.5rem;
   }
   #about .lead {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -2277,7 +2345,8 @@ color: #83B738;
     max-width: 380px;
   }
   #about .lead {
-    font-size: 2.3rem;
+    font-size: 1.5rem;
+    text-wrap: wrap;
   }
 }
 
@@ -2460,7 +2529,15 @@ color: #83B738;
 }
 
 #lbna{
-  flex: 1.68;
+  flex: 2;
+  background-color: #f0f0f0;
+}
+#lslb img {
+  width: -webkit-fill-available;
+}
+#QC{
+  width: -webkit-fill-available;
+
 }
  #services {
   background-color: #19191b;
