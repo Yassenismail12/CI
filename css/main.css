@@ -1336,6 +1336,7 @@ header .header-logo a {
   font-size: 1.2rem;
   background: none;
   border: none;
+  z-index: 2;
 }
 
 @media (max-width: 768px) {
